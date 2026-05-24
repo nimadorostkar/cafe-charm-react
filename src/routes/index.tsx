@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "آورو! — کافه تخصصی · رشت" },
+      { title: "آورو!" },
       { name: "description", content: "قهوه تخصصی، دسرهای هنری و فضایی ساخته شده برای نسل خلاق رشت." },
     ],
     links: [
@@ -30,45 +30,56 @@ const TABS = {
   hot: {
     label: "بار گرم",
     items: [
-      ["ci-esp", "اسپرسو", "۱۴۰ ترکیبی  ·  ۱۸۰ عربیکا"],
-      ["ci-ame", "آمریکانو", "۱۴۰ ترکیبی  ·  ۱۸۰ عربیکا"],
-      ["ci-cor", "کورتادو", "۱۶۰ ترکیبی  ·  ۲۰۰ عربیکا"],
-      ["ci-con", "کان‌پانا", "۱۸۰ ترکیبی  ·  ۲۲۰ عربیکا"],
-      ["ci-cap", "کاپوچینو", "۱۸۰ ترکیبی  ·  ۲۲۰ عربیکا"],
-      ["ci-lat", "لاته", "۱۹۰ ترکیبی  ·  ۲۳۰ عربیکا"],
+      { id: "mi-01", name: "اسپرسو", image: "/menu/mi-01.png" },
+      { id: "mi-02", name: "آمریکانو", image: "/menu/mi-02.png" },
+      { id: "mi-03", name: "لاته", image: "/menu/mi-03.png" },
     ],
   },
   cold: {
     label: "بار سرد",
     items: [
-      ["ci-icel", "آیس لاته", "۱۹۰ هزار تومان"],
-      ["ci-cb", "کلد برو", "۱۵۰ هزار تومان"],
-      ["ci-icea", "آیس آمریکانو", "۱۴۰ هزار تومان"],
-      ["ci-mat", "آیس ماچا", "۱۶۵ هزار تومان"],
-      ["ci-fra", "فراپه قهوه", "۱۸۰ هزار تومان"],
-      ["ci-lem", "لیمونات توت‌فرنگی", "۱۴۰ هزار تومان"],
+      { id: "mi-04", name: "آیس آمریکانو", image: "/menu/mi-04.png" },
+      { id: "mi-05", name: "آیس لاته", image: "/menu/mi-05.png" },
+      { id: "mi-06", name: "بلو منگو لاته", image: "/menu/mi-06.png" },
+      { id: "mi-07", name: "بلو منگو", image: "/menu/mi-07.png" },
+      { id: "mi-08", name: "آیس لاته سه رنگ", image: "/menu/mi-08.png" },
+      { id: "mi-09", name: "ماچا توت فرنگی", image: "/menu/mi-09.png" },
+      { id: "mi-10", name: "ماچا انبه", image: "/menu/mi-10.png" },
+      { id: "mi-11", name: "آیس ماچا لاته", image: "/menu/mi-11.png" },
+      { id: "mi-12", name: "آیس بلو لاته", image: "/menu/mi-12.png" },
+      { id: "mi-13", name: "فراپه قهوه", image: "/menu/mi-13.png" },
+      { id: "mi-14", name: "فراپه وانیل", image: "/menu/mi-14.png" },
+      { id: "mi-15", name: "آیس شکلات", image: "/menu/mi-15.png" },
+      { id: "mi-16", name: "شیک بیسکویت", image: "/menu/mi-16.png" },
+      { id: "mi-17", name: "شیک کوکی", image: "/menu/mi-17.png" },
+      { id: "mi-18", name: "میلک شیک", image: "/menu/mi-18.png" },
+      { id: "mi-19", name: "شیک شکلات", image: "/menu/mi-19.png" },
+      { id: "mi-20", name: "اسموتی هلو", image: "/menu/mi-20.png" },
+      { id: "mi-21", name: "اسموتی توت فرنگی", image: "/menu/mi-21.png" },
+      { id: "mi-22", name: "اسموتی شاتوت", image: "/menu/mi-22.png" },
+      { id: "mi-23", name: "لیموناد توت فرنگی", image: "/menu/mi-23.png" },
+      { id: "mi-24", name: "لیموناد", image: "/menu/mi-24.png" },
+      { id: "mi-25", name: "نوشیدنی مخصوص", image: "/menu/mi-25.png" },
     ],
   },
   dessert: {
     label: "کیک و دسر",
     items: [
-      ["ci-che", "چیزکیک", "۱۴۰ هزار تومان"],
-      ["ci-tir", "تیرامیسوی ماچا", "۱۶۵ هزار تومان"],
-      ["ci-cro", "کروسان پسته", "۱۲۰ هزار تومان"],
-      ["ci-brc", "کیک کره قهوه‌ای", "۱۵۰ هزار تومان"],
-      ["ci-muf", "مافین شکلاتی", "۱۰۰ هزار تومان"],
-      ["ci-pan", "پنکیک عسل", "۱۳۰ هزار تومان"],
+      { id: "mi-26", name: "تیرامیسو", image: "/menu/mi-26.png" },
+      { id: "mi-27", name: "شیرینی ناپلئونی", image: "/menu/mi-27.png" },
+      { id: "mi-28", name: "اکلر شکلاتی", image: "/menu/mi-28.png" },
+      { id: "mi-29", name: "کوکی پسته", image: "/menu/mi-29.png" },
+      { id: "mi-30", name: "کوکی شکلاتی", image: "/menu/mi-30.png" },
+      { id: "mi-31", name: "کوکی پسته و شکلات", image: "/menu/mi-31.png" },
+      { id: "mi-32", name: "گرانولا بار", image: "/menu/mi-32.png" },
     ],
   },
   sand: {
     label: "ساندویچ",
     items: [
-      ["ci-avo", "تست آووکادو", "۱۸۰ هزار تومان"],
-      ["ci-clu", "ساندویچ کلاب", "۲۱۰ هزار تومان"],
-      ["ci-bag", "بیگل خامه‌ای", "۱۶۰ هزار تومان"],
-      ["ci-bag2", "باگت مرغ", "۱۹۰ هزار تومان"],
-      ["ci-cae", "ساندویچ سزار", "۱۸۵ هزار تومان"],
-      ["ci-crq", "کروک موسیو", "۲۰۰ هزار تومان"],
+      { id: "mi-33", name: "ساندویچ کروسان", image: "/menu/mi-33.png" },
+      { id: "mi-34", name: "ساندویچ فوکاچیا", image: "/menu/mi-34.png" },
+      { id: "mi-35", name: "ساندویچ نان چندغله", image: "/menu/mi-35.png" },
     ],
   },
 } as const;
@@ -77,8 +88,7 @@ type TabKey = keyof typeof TABS;
 
 const GALLERY = [
   ["g1", "بار قهوه"], ["g2", "نوشیدنی سرد"], ["g3", "ماچا"],
-  ["g4", "دسر"], ["g5", "دکور داخلی"], ["g6", "اسپرسو"],
-  ["g7", "فضای خارجی"], ["g8", "وایب"], ["g9", "جامعه"],
+  ["g5", "دکور داخلی"],
 ];
 
 const TESTIMONIALS = [
@@ -91,7 +101,7 @@ const TESTIMONIALS = [
 function AvroLanding() {
   const [navSolid, setNavSolid] = useState(false);
   const [mobOpen, setMobOpen] = useState(false);
-  const [tab, setTab] = useState<TabKey>("hot");
+  const [tab, setTab] = useState<TabKey>("cold");
   const [slide, setSlide] = useState(0);
   const heroRef = useRef<HTMLElement | null>(null);
 
@@ -157,8 +167,9 @@ function AvroLanding() {
       <style>{CSS}</style>
 
       <nav id="nav" className={navSolid ? "solid" : ""}>
-        <a href="#hero" className="nav-logo">
-          <span className="logo-word">AVRO!</span>
+        <a href="#hero" className="nav-logo" aria-label="AVRO!">
+          <img src="/logo.png" alt="AVRO!" className="logo-img logo-light" />
+          <img src="/logo-dark.png" alt="" className="logo-img logo-dark" aria-hidden="true" />
         </a>
         <ul className="nav-links">
           <li><a href="#hero">صفحه اصلی</a></li>
@@ -204,7 +215,7 @@ function AvroLanding() {
         </div>
 
         <div className="hero-inner">
-          <div className="hero-badge"><span className="bdot" /> اکنون باز است · رشت، گیلان</div>
+          <div className="hero-badge"><span className="bdot" /> در کنار شماییم · بلوار دیلمان</div>
           <h1 className="hero-h1">
             <span className="hero-line"><span>جایی که هر</span></span>
             <span className="hero-line"><span>جرعه یک</span></span>
@@ -262,8 +273,7 @@ function AvroLanding() {
       <section id="menu" className="section">
         <div className="wrap">
           <div className="menu-top rv">
-            <div><div className="eye">منوی امضایی</div><h2 className="sec-h">منوی <span style={{ color: "var(--orange)" }}>آورو</span></h2></div>
-            <a href="#" className="see-all">مشاهده کامل منو ↗</a>
+            <div><div className="eye">منو تخصصی آورو</div><h2 className="sec-h">منوی <span style={{ color: "var(--orange)" }}>آورو</span></h2></div>
           </div>
           <div className="menu-tabs rv d1">
             {(Object.keys(TABS) as TabKey[]).map((k) => (
@@ -272,11 +282,10 @@ function AvroLanding() {
           </div>
           <div className="tpane on rv d2">
             <div className="mi-grid">
-              {TABS[tab].items.map(([cls, name, price]) => (
-                <div key={name} className="mi">
-                  <div className={`mi-img ${cls}`}><div className="mi-shine" /><div className="mi-rim" /></div>
+              {TABS[tab].items.map(({ id, name, image }) => (
+                <div key={id} className="mi">
+                  <div className="mi-img" style={{ backgroundImage: `url('${image}')` }}><div className="mi-shine" /><div className="mi-rim" /></div>
                   <div className="mi-name">{name}</div>
-                  <div className="mi-price">{price}</div>
                 </div>
               ))}
             </div>
@@ -360,17 +369,25 @@ function AvroLanding() {
       <footer id="footer">
         <div className="ft-grid">
           <div className="ft-logo">
-            <div className="ft-logo-word">AVRO!</div>
+            <img src="/logo-dark.png" alt="AVRO!" className="ft-logo-img" />
             <p className="ft-tag">قهوه تخصصی، دسرهای هنری و جامعه‌ای که حالیشه. ما را در قلب رشت بیابید — جایی که باران با گرما ملاقات می‌کند.</p>
             <div className="ft-socs">
-              <a href="https://www.instagram.com/avrocafe/" className="ft-soc" target="_blank" rel="noreferrer">IG</a>
-              <a href="#" className="ft-soc">TG</a>
-              <a href="#" className="ft-soc">𝕏</a>
-              <a href="#" className="ft-soc">WA</a>
+              <a href="https://www.instagram.com/avrocafe/" className="ft-soc" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z" fill="currentColor" /></svg>
+              </a>
+              <a href="#" className="ft-soc" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5 2.8 10.8c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.5c.2.6.8.8 1.3.3l2.6-2.4 4.9 3.6c.9.5 1.5.2 1.7-.9L22.8 5c.3-1.2-.5-1.7-1.3-1.5z" fill="currentColor" /></svg>
+              </a>
+              <a href="https://wa.me/989129530911" className="ft-soc" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.3c-.2.6-1.1 1.1-1.8 1.2-.5.1-1.1.2-3.7-.8-3.1-1.3-5.1-4.4-5.3-4.6-.2-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.7-.4 1-.4h.7c.2 0 .5-.1.8.6.3.7 1 2.5 1.1 2.7.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.3-.6.5-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.2 2.6 1.6 3 1.8.4.2.6.2.8-.1.2-.3.9-1.1 1.1-1.5.2-.4.5-.3.8-.2.3.1 2 .9 2.3 1.1.3.2.5.3.6.5.1.2.1 1-.1 1.6z" fill="currentColor" /></svg>
+              </a>
+              <a href="#" className="ft-soc" aria-label="X">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.7l-5.2-6.8L5.4 22H2.3l7.3-8.4L1 2h6.9l4.7 6.2L18.9 2zm-1.2 18h1.9L7.2 3.9H5.2L17.7 20z" fill="currentColor" /></svg>
+              </a>
             </div>
           </div>
           <div className="ft-col">
-            <h4>کاوش</h4>
+            <h4>آورو</h4>
             <ul className="ft-links">
               <li><a href="#hero">صفحه اصلی</a></li>
               <li><a href="#menu">منوی ما</a></li>
@@ -397,7 +414,7 @@ function AvroLanding() {
         </div>
         <div className="ft-bot">
           <span>© ۱۴۰۵ کافه آورو. تمامی حقوق محفوظ است.</span>
-          <span className="ft-brand">AVRO!</span>
+          <img src="/logo.png" alt="" className="ft-brand-img" aria-hidden="true" />
         </div>
       </footer>
     </>
@@ -417,8 +434,11 @@ button{font-family:inherit}
 
 #nav{position:fixed;top:0;inset-inline:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.75rem 5%;transition:padding .4s,background .4s,backdrop-filter .4s,box-shadow .4s;}
 #nav.solid{padding:1rem 5%;background:rgba(255,249,240,.92);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--border)}
-.nav-logo .logo-word{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--cream);letter-spacing:-.02em;transition:color .4s}
-#nav.solid .nav-logo .logo-word{color:var(--text)}
+.nav-logo{display:flex;align-items:center}
+.nav-logo .logo-img{height:2.1rem;width:auto;transition:opacity .4s}
+.nav-logo .logo-dark{display:none}
+#nav.solid .nav-logo .logo-light{display:none}
+#nav.solid .nav-logo .logo-dark{display:block}
 .nav-links{display:flex;gap:2rem}
 .nav-links a{font-weight:600;font-size:.9rem;letter-spacing:.02em;color:var(--cream);transition:color .2s}
 #nav.solid .nav-links a{color:var(--text)}
@@ -525,8 +545,6 @@ button{font-family:inherit}
 
 #menu{background:var(--cream)}
 .menu-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1.5rem}
-.see-all{font-weight:700;font-size:.85rem;color:var(--navy);border-bottom:2px solid var(--orange);padding-bottom:.2rem;transition:color .2s}
-.see-all:hover{color:var(--orange)}
 .menu-tabs{display:flex;justify-content:center;gap:.4rem;margin-bottom:3.5rem;background:rgba(0,0,0,.05);border-radius:100px;padding:.35rem;width:fit-content;margin-inline:auto;flex-wrap:wrap;}
 .mtab{padding:.7rem 1.75rem;border-radius:100px;border:none;background:transparent;font-weight:600;font-size:.95rem;cursor:pointer;color:var(--mid);transition:all .3s cubic-bezier(.16,1,.3,1);white-space:nowrap;}
 .mtab.on{background:var(--orange);color:#fff;box-shadow:0 4px 20px rgba(244,96,54,.4);transform:scale(1.03);}
@@ -540,32 +558,8 @@ button{font-family:inherit}
 .mi:hover .mi-img{box-shadow:0 20px 60px rgba(0,0,0,.24);transform:scale(1.06)}
 .mi-shine{position:absolute;top:18%;right:22%;width:28%;height:14%;background:rgba(255,255,255,.22);border-radius:50%;filter:blur(4px);transform:rotate(-15deg)}
 .mi-rim{position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 -4px 12px rgba(0,0,0,.25),inset 0 2px 6px rgba(255,255,255,.06)}
-.ci-esp{background:url('https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-ame{background:url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-cor{background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-cap{background:url('https://images.unsplash.com/photo-1534687941688-651ccaafbff8?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-con{background:url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-lat{background:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-icel{background:url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-cb{background:url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-icea{background:url('https://images.unsplash.com/photo-1470338745628-171cf53de3a8?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-mat{background:url('https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-fra{background:url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-lem{background:url('https://images.unsplash.com/photo-1523371054106-bbf80586c38c?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-che{background:url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-tir{background:url('https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-cro{background:url('https://images.unsplash.com/photo-1555507036-ab794f575e6e?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-brc{background:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-muf{background:url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-pan{background:url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-avo{background:url('https://images.unsplash.com/photo-1541519227354-08fa5d50c820?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-clu{background:url('https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-bag{background:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-bag2{background:url('https://images.unsplash.com/photo-1539252554453-80ab65ce3586?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-cae{background:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
-.ci-crq{background:url('https://images.unsplash.com/photo-1528736235302-52922df5c122?auto=format&fit=crop&w=320&h=320&q=80') center/cover}
+.mi-img{background-size:cover;background-position:center}
 .mi-name{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
-.mi-price{font-size:.85rem;color:var(--orange);font-weight:600;direction:rtl;line-height:1.5}
 
 #about{background:var(--navy)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -591,7 +585,7 @@ button{font-family:inherit}
 .ig-link:hover{color:var(--orange)}
 .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:268px;gap:10px}
 .gal-grid .gi:nth-child(1){grid-row:span 2}
-.gal-grid .gi:nth-child(5){grid-column:span 2}
+.gal-grid .gi:nth-child(4){grid-column:span 2}
 .gi{border-radius:14px;overflow:hidden;position:relative;cursor:pointer}
 .gi-bg{position:absolute;inset:0;transition:transform .5s}
 .gi:hover .gi-bg{transform:scale(1.08)}
@@ -602,12 +596,7 @@ button{font-family:inherit}
 .g1{background:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=75') center/cover}
 .g2{background:url('https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&w=600&q=75') center/cover}
 .g3{background:url('https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=75') center/cover}
-.g4{background:url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?auto=format&fit=crop&w=600&q=75') center/cover}
 .g5{background:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=75') center/cover}
-.g6{background:url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=75') center/cover}
-.g7{background:url('https://images.unsplash.com/photo-1464207687429-7505649dae38?auto=format&fit=crop&w=600&q=75') center/cover}
-.g8{background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=75') center/cover}
-.g9{background:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=75') center/cover}
 
 #testimonials{background:#ece7da;overflow:hidden}
 .ttrack{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:.5rem}
@@ -634,17 +623,18 @@ button{font-family:inherit}
 
 footer{background:#0a0804;color:rgba(255,249,240,.52);padding:5rem 5% 2rem}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
-.ft-logo-word{font-family:'Syne',sans-serif;font-weight:800;color:var(--cream);font-size:1.6rem;margin-bottom:1.1rem;letter-spacing:-.02em}
+.ft-logo-img{height:3.2rem;width:auto;margin-bottom:1.1rem}
 .ft-tag{font-size:.86rem;line-height:1.8;max-width:280px}
 .ft-socs{display:flex;gap:.65rem;margin-top:1.5rem}
-.ft-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,249,240,.07);border:1px solid rgba(255,249,240,.09);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:rgba(255,249,240,.52);transition:background .2s,color .2s,border-color .2s}
+.ft-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,249,240,.07);border:1px solid rgba(255,249,240,.09);display:flex;align-items:center;justify-content:center;color:rgba(255,249,240,.52);transition:background .2s,color .2s,border-color .2s}
+.ft-soc svg{width:18px;height:18px;display:block}
 .ft-soc:hover{background:var(--orange);color:#fff;border-color:var(--orange)}
 .ft-col h4{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin-bottom:1.2rem;font-weight:700}
 .ft-links{display:flex;flex-direction:column;gap:.65rem}
 .ft-links a{font-size:.86rem;color:rgba(255,249,240,.48);transition:color .2s}
 .ft-links a:hover{color:var(--orange)}
 .ft-bot{border-top:1px solid rgba(255,249,240,.06);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;font-size:.76rem}
-.ft-brand{font-family:'Syne',sans-serif;font-weight:800;color:var(--orange);font-size:1.1rem}
+.ft-brand-img{height:2.2rem;width:auto}
 
 @media(max-width:900px){
   .nav-links{display:none}.ham{display:flex}
@@ -658,7 +648,7 @@ footer{background:#0a0804;color:rgba(255,249,240,.52);padding:5rem 5% 2rem}
   .ft-logo{grid-column:span 2}
   .gal-grid{grid-template-columns:repeat(2,1fr)}
   .gal-grid .gi:nth-child(1){grid-row:span 1}
-  .gal-grid .gi:nth-child(5){grid-column:span 1}
+  .gal-grid .gi:nth-child(4){grid-column:span 1}
   .mi-grid{grid-template-columns:repeat(2,1fr)}
   .hero-ring{display:none}
 }
