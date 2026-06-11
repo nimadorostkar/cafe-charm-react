@@ -217,9 +217,9 @@ function AvroLanding() {
         <div className="hero-inner">
           <div className="hero-badge"><span className="bdot" /> در کنار شماییم · بلوار دیلمان</div>
           <h1 className="hero-h1">
-            <span className="hero-line"><span>جایی که هر</span></span>
-            <span className="hero-line"><span>جرعه یک</span></span>
-            <span className="hero-line"><span><em className="accent-word">داستانه.</em></span></span>
+            <span className="hero-line"><span>For tastes that</span></span>
+            <span className="hero-line"><span>don't need</span></span>
+            <span className="hero-line"><span><em className="accent-word">explanation</em></span></span>
           </h1>
           <p className="hero-p">قهوه تخصصی، دسرهای هنری و فضایی ساخته شده برای نسل خلاق رشت. به آورو خوش آمدید.</p>
           <div className="hero-btns">
