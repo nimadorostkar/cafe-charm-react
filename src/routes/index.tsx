@@ -62,6 +62,16 @@ const TABS = {
       { id: "mi-25", name: "نوشیدنی مخصوص", image: "/menu/mi-25.png" },
     ],
   },
+  matcha: {
+    label: "ماچا بار",
+    items: [
+      { id: "mi-36", name: "ماچا لاته", image: "/menu/mi-11.png" },
+      { id: "mi-37", name: "آیس ماچا لاته + پوره منگو", image: "/menu/mi-10.png" },
+      { id: "mi-38", name: "آیس ماچا لاته + پوره بری", image: "/menu/mi-09.png" },
+      { id: "mi-39", name: "آیس اسپرولینا + پوره منگو", image: "/menu/mi-06.png" },
+      { id: "mi-40", name: "آیس اسپرولینا + پوره بری", image: "/menu/mi-12.png" },
+    ],
+  },
   dessert: {
     label: "کیک و دسر",
     items: [
