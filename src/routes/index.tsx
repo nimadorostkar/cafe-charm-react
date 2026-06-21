@@ -20,10 +20,10 @@ export const Route = createFileRoute("/")({
 });
 
 const SLIDES = [
-  { cls: "s1", tag: "قهوه تخصصی", h: ["استخراج", "بی‌نقص."], p: "دانه‌های تک‌منشاء، دم‌آوری شده با دقت توسط باریستاهای ما. هر فنجان، یک آیین." },
-  { cls: "s2", tag: "دسرهای هنری", h: ["رویاهای", "شیرین."], p: "شیرینی‌های خانگی تازه‌پزی شده. از کروسان پسته تا تیرامیسوی ماچا." },
-  { cls: "s3", tag: "دکور چشم‌نواز", h: ["فضایی برای", "خلق کردن."], p: "نور گرم، گوشه‌های دنج، و فضایی که الهام می‌بخشد. خانه دومت در رشت." },
-  { cls: "s4", tag: "جامعه خلاق", h: ["آدم‌هایت را", "اینجا پیدا کن."], p: "محل تجمع جوانان خلاق رشت. قهوه خوب، آدم‌های خوب به هم می‌رسند." },
+  { cls: "s1", tag: "قهوه تخصصی", h: ["قهوه‌ ما حرف", "برای گفتن دارد"], p: "دم آوری شده با دقت توسط باریستا های ما، ما برای هر فنجان میجنگیم" },
+  { cls: "s2", tag: "دسرهای هنری", h: ["دسر های", "جذابمون"], p: "دسرها و کوکی های آورو هر روز شارژ میشن، از کروسان تا تیرامیسو بالز مخصوص آورو" },
+  { cls: "s3", tag: "فضای مینیمال", h: ["اینجا حالت", "خوب میشه"], p: "نور گرم، گوشه‌های دنج، و فضایی که الهام می‌بخشد. خانه دومت در رشت." },
+  { cls: "s4", tag: "جامعه خلاق", h: ["اینجا حالت", "کنارمون خوبه"], p: "قهوه خوب، آدم‌های خوب به هم می‌رسند." },
 ];
 
 const TABS = {
@@ -221,7 +221,7 @@ function AvroLanding() {
             <span className="hero-line"><span>don't need</span></span>
             <span className="hero-line"><span><em className="accent-word">explanation</em></span></span>
           </h1>
-          <p className="hero-p">قهوه تخصصی، دسرهای هنری و فضایی ساخته شده برای نسل خلاق رشت. به آورو خوش آمدید.</p>
+          <p className="hero-p">Go WHEREVER MAKES YOU HAPPY.</p>
           <div className="hero-btns">
             <a href="#menu" className="btn-fill">مشاهده منو</a>
             <a href="#about" className="btn-ghost">داستان ما</a>
@@ -234,14 +234,6 @@ function AvroLanding() {
         </div>
         <div className="scroll-cue"><div className="sc-line" /><span className="sc-txt">اسکرول</span></div>
       </section>
-
-      <div className="ticker" aria-hidden="true">
-        <div className="ticker-track">
-          {[...tickerItems, ...tickerItems, ...tickerItems].map((t, i) => (
-            <span key={i}>{t}<span className="sep"> · </span></span>
-          ))}
-        </div>
-      </div>
 
       <section id="slider">
         {SLIDES.map((s, i) => (
